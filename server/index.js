@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const port = 3333;
 const BugReports = require("./db/queries.js");
@@ -6,6 +7,7 @@ const BugReports = require("./db/queries.js");
 // app.use(express.static(path.join(__dirname, "")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors())
 
 app.get("/api/bugs", (req, res) => {
   BugReports.getAllBugReports()
