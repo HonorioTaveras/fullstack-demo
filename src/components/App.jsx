@@ -2,7 +2,6 @@ import React from 'react';
 import Nav from './Nav.jsx';
 import BugTile from './BugTile.jsx';
 import exampleData from '../example-data/exampleData';
-
 import '../styles/App.scss';
 
 class App extends React.Component {
