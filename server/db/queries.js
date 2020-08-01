@@ -4,7 +4,8 @@ mongoose.connect("mongodb://localhost:27017/bugs", {
   useUnifiedTopology: true,
 });
 
-var bugReportsSchema = mongoose.Schema({
+const Schema = mongoose.Schema;
+var bugReportsSchema = new Schema({
   bugName: String,
   bugDescription: String,
   reportedBy: String,
@@ -16,13 +17,14 @@ var bugReportsSchema = mongoose.Schema({
 var BugReports = mongoose.model("BugReports", bugReportsSchema);
 
 const getAllBugReports = () => {
+  return BugReports.find({});
+};
 
-}
+const addNewBugReport = (bugReport) => {
+  return BugReports.create(bugReport);
+};
 
-const addNewBugReport = () => {
-
-}
 module.exports = {
   getAllBugReports,
-  addNewBugReport
+  addNewBugReport,
 };

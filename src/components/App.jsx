@@ -3,6 +3,7 @@ import Nav from './Nav.jsx';
 import BugTile from './BugTile.jsx';
 import exampleData from '../example-data/exampleData';
 import '../styles/App.scss';
+import Axios from 'axios'
 
 class App extends React.Component {
   constructor() {
@@ -16,6 +17,10 @@ class App extends React.Component {
 
   filterHandler(filter) {
     this.setState({ filter });
+  }
+
+  componentDidMount() {
+
   }
 
   render() {
